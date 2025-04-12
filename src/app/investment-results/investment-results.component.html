@@ -1,1 +1,23 @@
-<p>investment-results works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Year</td>
+            <td>Investment Value</td>
+            <td>Interest (Year)</td>
+            <td>Total Interest</td>
+            <td>Invested Capital</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (yearlyResult of resultsList; track yearlyResult.year) {
+            <tr>
+                <td>{{yearlyResult.year}}</td>
+                <td>{{yearlyResult.valueEndOfYear  | number:'1.2-2'}}</td>
+                <td>{{yearlyResult.interest  | number:'1.2-2'}}</td>
+                <td>{{yearlyResult.totalInterest | number:'1.2-2'}}</td>
+                <td>{{yearlyResult.totalAmountInvested | number:'1.2-2'}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,8 +2,10 @@
 // e.g., integrate it into a service or component
 // You may need to tweak it, depending on where and how you use it
 
-function calculateInvestmentResults(initialInvestment:number,annualInvestment:number, duration:number, expectedReturn:number) {
-  const annualData = [];
+import { OutputObject } from "./app/output.model";
+
+export function calculateInvestmentResults(initialInvestment:number,annualInvestment:number, duration:number, expectedReturn:number) {
+  const annualData: OutputObject[] = [];
   let investmentValue = initialInvestment;
 
   for (let i = 0; i < duration; i++) {
