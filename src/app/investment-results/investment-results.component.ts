@@ -1,6 +1,7 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, input, Input, signal, inject } from '@angular/core';
 import { OutputObject } from '../output.model';
 import { DecimalPipe } from '@angular/common';
+import { InvestmentService } from '../investment.service';
 
 @Component({
   selector: 'app-investment-results',
@@ -10,6 +11,7 @@ import { DecimalPipe } from '@angular/common';
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  @Input({required:true}) resultsList!:OutputObject[]
+  private investmentService = inject(InvestmentService);
 
+  resultsList = this.investmentService.resultData.asReadonly()
 }

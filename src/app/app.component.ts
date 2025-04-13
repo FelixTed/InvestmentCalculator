@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { UserInputObject } from './user-input/input.model';
@@ -14,12 +14,6 @@ import { calculateInvestmentResults } from '../investment-results';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  annualData: OutputObject[] = [] ;
-
-  handleSubmit(input: UserInputObject){
-    this.annualData = calculateInvestmentResults(input.initialInvestment, input.annualInvestment, input.duration, input.expectedReturn)
-    console.log(this.annualData)
-  }
 
 
 }
